@@ -1,0 +1,67 @@
+<?import javafx.collections.FXCollections?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.*?>
+<?import javafx.scene.web.HTMLEditor?>
+<GridPane fx:id="gp" fx:controller="Main.Controller"
+          xmlns:fx="http://javafx.com/fxml" hgap="12" vgap="12">
+    <padding>
+        <Insets top="10.0" bottom="1.0" left="10.0" right="1.0"/>
+    </padding>
+    <fx:define>
+        <ToggleGroup fx:id="theTogs"/>
+    </fx:define>
+    <Label text="First Name: " GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+    <Label text="Last Name: " GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+    <Label text="Phone: " GridPane.columnIndex="0" GridPane.rowIndex="2"/>
+    <Label text="Age: " GridPane.columnIndex="0" GridPane.rowIndex="3"/>
+    <Label text="Occupation: " GridPane.columnIndex="0" GridPane.rowIndex="4"/>
+    <TextField fx:id="tf_fname" promptText="First name" GridPane.columnIndex="1" GridPane.rowIndex="0" minWidth="200"/>
+    <TextField fx:id="tf_lname" promptText="last name" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+    <TextField fx:id="tf_phone" promptText="Phone" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+    <TextField fx:id="tf_age" promptText="Age" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+    <TextField fx:id="tf_occupation" promptText="Occupation" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+    <Button fx:id="submit" text="Submit" GridPane.columnIndex="5" GridPane.rowIndex="0"/>
+
+    <Label text="Company: " GridPane.columnIndex="2" GridPane.rowIndex="0"/>
+    <Label text="Industry: " GridPane.columnIndex="2" GridPane.rowIndex="1"/>
+    <TextField fx:id="tf_company" promptText="Company" GridPane.columnIndex="3" GridPane.rowIndex="0" GridPane.columnSpan="2"/>
+    <TextField fx:id="tf_industry" promptText="Industry" GridPane.columnIndex="3" GridPane.rowIndex="1" GridPane.columnSpan="2"/>
+
+    <Label text="Gender" GridPane.columnIndex="2" GridPane.rowIndex="2"/>
+    <RadioButton text="Male" toggleGroup="$theTogs" GridPane.columnIndex="3" GridPane.rowIndex="2"/>
+    <RadioButton text="Female" toggleGroup="$theTogs" GridPane.columnIndex="4" GridPane.rowIndex="2"/>
+
+    <Label text="Availability" GridPane.columnIndex="2" GridPane.rowIndex="3"/>
+    <CheckBox fx:id="chk_7" text="7am to 3pm" GridPane.columnIndex="3" GridPane.rowIndex="3"/>
+    <CheckBox fx:id="chk_8" text="8am to 4pm" GridPane.columnIndex="4" GridPane.rowIndex="3"/>
+    <CheckBox fx:id="chk_9" text="9am to 5pm" GridPane.columnIndex="5" GridPane.rowIndex="3"/>
+    <CheckBox fx:id="chk_10" text="10am to 6pm" GridPane.columnIndex="3" GridPane.rowIndex="4"/>
+    <CheckBox fx:id="chk_11" text="11am to 7pm" GridPane.columnIndex="4" GridPane.rowIndex="4"/>
+    <CheckBox fx:id="chk_12" text="12pm to 8pm" GridPane.columnIndex="5" GridPane.rowIndex="4"/>
+
+    <Label text="Birthday:" GridPane.columnIndex="0" GridPane.rowIndex="6"/>
+    <DatePicker fx:id="dater" GridPane.columnIndex="1" GridPane.rowIndex="6" prefWidth="200"/>
+
+    <Label text="Address:" GridPane.columnIndex="0" GridPane.rowIndex="7"/>
+    <TextField fx:id="tf_street" promptText="Street" GridPane.columnIndex="1" GridPane.rowIndex="7" minWidth="250" GridPane.columnSpan="3"/>
+    <TextField fx:id="tf_postalcode" promptText="A1A 1A1" GridPane.columnIndex="5" GridPane.rowIndex="7" maxWidth="80"/>
+    <ChoiceBox fx:id="cb_city" GridPane.columnIndex="4" GridPane.rowIndex="7">
+        <items>
+            <FXCollections fx:factory="observableArrayList">
+                <String fx:value="Toronto"/>
+                <String fx:value="Scarborough"/>
+                <String fx:value="Pickering"/>
+                <String fx:value="Markham"/>
+                <String fx:value="Mississauga"/>
+                <String fx:value="Brampton"/>
+            </FXCollections>
+        </items>
+    </ChoiceBox>
+    <HTMLEditor fx:id="theHTML" GridPane.columnIndex="0" GridPane.rowIndex="8" GridPane.columnSpan="6" GridPane.rowSpan="3" prefWidth="500" prefHeight="150">
+        <htmlText>
+            <String fx:value="this is it"/>
+        </htmlText>
+    </HTMLEditor>
+</GridPane>
